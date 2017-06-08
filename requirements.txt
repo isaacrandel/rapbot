@@ -1,2 +1,4 @@
 requests==2.14.2
 python-twitter==3.3
+-e git://github.com/westonpace/pyttsx.git#egg=pyttsx
+six==1.10.0
