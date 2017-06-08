@@ -12,3 +12,5 @@ CONSUMER_SECRET = consumer-secret
 ACCESS_TOKEN_KEY = access-token-key
 ACCESS_TOKEN_SECRET = access-token-secret
 ```
+
+In a virtualenv, `pip install -r requirements.txt`
