@@ -9,8 +9,8 @@
 ## 6) rap it (play)
 
 from rapbot.twitterapi import get_latest_status
-from rapbot.speech import say
+from rapbot.speech import rap
 
 def main():
     tweet = get_latest_status('realdonaldtrump')[0]
-    say(tweet)
+    rap(tweet)
