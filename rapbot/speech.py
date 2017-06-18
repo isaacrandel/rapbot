@@ -12,6 +12,9 @@ def build_rap(tweet):
 
 def rap(tweet):
     engine = pyttsx.init()
+    rate = engine.getProperty('rate')
+    engine.setProperty('rate', rate - 40)
+    
     rap = build_rap(tweet)
     engine.say(rap)
     engine.runAndWait()
