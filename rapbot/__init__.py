@@ -8,13 +8,20 @@
 ## 5) convert tweet to something rapable ?????
 ## 6) rap it (play)
 
+import configparser
 import glob
 import hashlib
 import os
+import sys
 
 from rapbot.twitterapi import get_latest_status
 from rapbot.speech import rap
 
+
+config = configparser.ConfigParser()
+ROOT_DIR = os.path.dirname(sys.modules['__main__'].__file__)
+
+config.read(os.path.join(ROOT_DIR, 'rapbot.conf'))
 
 
 def store_tweet(tweet, tweet_dir):
@@ -32,7 +39,7 @@ def main():
     tweet_dir = os.path.join(os.path.dirname(os.path.realpath(__file__)), '..', 'tweets')
 
     try:
-        tweet = get_latest_status('realdonaldtrump')[0]
+        tweet = get_latest_status(config['rapbot']['twitter_handle'])[0]
         store_tweet(tweet, tweet_dir)
     except Exception as e:
         cached_tweets = glob.glob(os.path.join(tweet_dir, '*'))
