@@ -27,6 +27,7 @@ def build_rap(tweet):
 def rap(tweet):
     loop_file = get_loop()
     loop = AudioSegment.from_wav(loop_file)
+    loop = loop * 3  # make the loops longer for long tweets
     rap_txt = build_rap(tweet)
 
     es = espeak.ESpeak(pitch=1)
