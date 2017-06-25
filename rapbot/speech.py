@@ -8,7 +8,7 @@ from pydub.playback import play
 
 
 INTROS = ['yo yo yo', 'whats up homie its rapbot',
-          'its ya boi rapbot', 'should out to my homies from balmakewen intermediate',
+          'its ya boi rapbot', 'shout out to my homies from balmakewen intermediate',
           'Droppin this fire mix for room 15', 'what. what. what. crunk ain\'t dead']
 OUTROS = ['Peace out homies', 'mic drop', 'laters boi', 'word to your motha']
 
