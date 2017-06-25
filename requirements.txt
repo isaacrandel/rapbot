@@ -1,6 +1,7 @@
 requests==2.14.2
 python-twitter==3.3
--e git://github.com/westonpace/pyttsx.git#egg=pyttsx
+-e git://github.com/relsi/python-espeak#egg=python-espeak
+six==1.10.0
 -e git://github.com/jiaaro/pydub.git#egg=pydub
 six==1.10.0
 RPi.GPIO==0.6.3
