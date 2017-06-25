@@ -6,8 +6,10 @@ import espeak
 from pydub import AudioSegment
 from pydub.playback import play
 
-INTROS = ['yo yo yo', 'wassup homie its rapbot', 'its ya boi rapbot']
-OUTROS = ['Peace out homies', 'mic drop', 'laters boi']
+INTROS = ['yo yo yo', 'whats up homie its rapbot',
+          'its ya boi rapbot', 'should out to my homies from balmakewen intermediate',
+          'Droppin this fire mix for room 15']
+OUTROS = ['Peace out homies', 'mic drop', 'laters boi', 'word to your motha']
 
 def get_loop():
     from os import listdir
@@ -31,5 +33,5 @@ def rap(tweet):
     with tempfile.TemporaryDirectory() as tmpdir:
         es.save(rap_txt, 'rap.wav')
         rap = AudioSegment.from_wav('rap.wav')
-        mix = loop.overlay(rap)
+        mix = rap.overlay(loop)
         play(mix)
