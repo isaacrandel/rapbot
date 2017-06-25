@@ -14,3 +14,5 @@ ACCESS_TOKEN_SECRET = access-token-secret
 ```
 
 In a virtualenv, `pip install -r requirements.txt`
+
+Install system requirements from system.requirements.txt
