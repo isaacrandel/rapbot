@@ -22,12 +22,12 @@ rpi = config['rapbot']['raspberry_pi']
 if __name__ == '__main__':
     if rpi == 'True':
         GPIO.setmode(GPIO.BCM)
-        GPIO.setup(18, GPIO.IN, pull_up_down=GPIO.PUD_UP)
+        GPIO.setup(23, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 
         while True:
-            input_state = GPIO.input(18)
+            input_state = GPIO.input(23)
             if input_state == False:
                 main()
-                time.sleep(0.2)
+                print('done')
     else:
         main()
