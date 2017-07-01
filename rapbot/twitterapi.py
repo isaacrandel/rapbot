@@ -21,3 +21,7 @@ api = twitter.Api(
 def get_latest_status(username):
 	statuses = api.GetUserTimeline(screen_name=username)
 	return [s.text for s in statuses]
+
+def get_latest_dm():
+    msgs = api.GetDirectMessages(count=1)
+    return [s.text for s in msgs]

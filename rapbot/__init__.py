@@ -14,7 +14,10 @@ import hashlib
 import os
 import sys
 
-from rapbot.twitterapi import get_latest_status
+from rapbot.twitterapi import (
+    get_latest_status,
+    get_latest_dm,
+)
 from rapbot.speech import rap
 
 
@@ -39,9 +42,11 @@ def main():
     tweet_dir = os.path.join(os.path.dirname(os.path.realpath(__file__)), '..', 'tweets')
 
     try:
-        tweet = get_latest_status(config['rapbot']['twitter_handle'])[0]
+        #tweet = get_latest_status(config['rapbot']['twitter_handle'])[0]
+        tweet = get_latest_dm()[0] 
         store_tweet(tweet, tweet_dir)
     except Exception as e:
+        print(str(e))
         cached_tweets = glob.glob(os.path.join(tweet_dir, '*'))
         latest_tweet = max(cached_tweets, key=os.path.getctime)
         with open(latest_tweet, 'r') as f:
